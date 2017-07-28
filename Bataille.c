@@ -394,7 +394,7 @@ void main ()
 		else if (deck1[0] == 99 || egalite == 2)	
 			{ 
 				printf("Joueur 2 a gagne\n");	
-				printf("player 2 win\n);
+				printf("player 2 win\n");
 			}
 		else if (deck2[0] == 99 || egalite == 3)	
 			{
