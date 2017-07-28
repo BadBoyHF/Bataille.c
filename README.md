@@ -1,1 +1,3 @@
-Voici mon projet de fin d'année 2017, c'est un simple jeu en C. C'est un jeu de cartes ( bataille ) 
+Bonjour voici mon programme de fin d'année en informatique, C'est un jeu de cartes en langage C. 
+
+Hello this is my programm of the end of the year in informatics, That's a card game in language C. 
