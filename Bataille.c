@@ -82,7 +82,8 @@ void main ()
 		srand (time(NULL));
 
 		
-//Generation de nombres alatoires unique		
+//Generation de nombres alatoires unique	
+//Generating some random numbers
 		for(i=0;i<=51;i++)
 		{
 			exists=1;
@@ -108,7 +109,9 @@ void main ()
 			}
 		}
 //Repartition des Cartes en 2 paquets
+//Distribution of cards in two packages
 		//paquet 1
+		//deck 1 
 		for (a = 0 ; a<=51; a++)
 		{
 			if (a<26)
@@ -122,6 +125,7 @@ void main ()
 			}
 		}
 		//paquet 2
+		//deck 2 
 		for (b = 0 ; b<=51; b++)
 		{
 			if(b<26)
@@ -138,7 +142,9 @@ void main ()
 		}
 
 		printf("demarrage du jeu de bataille.\n\n");
+		ptintf("Start of the Battle game. \n\n");
 		printf("\n\nveuillez appuyer sur une touche pour jouer une  carte\n\n");
+		printf("\n\nPlease press enter to play one card\n\n");
 		getch();
 		do
 		{
@@ -152,9 +158,11 @@ void main ()
 			//getch();
 
 			// Reinit compteur lecture tableau
+			
 			k=0;
 
 			//cas ou deck1 est plus petit que deck 2
+			//if deck1 is smaller as deck2 
 			if (Cartes[deck1[k]][1] < Cartes[deck2[k]][1])
 				{
 					printf("  %c %c %c       %c %c %c \n",196,196,196,196,196,196);
@@ -165,6 +173,7 @@ void main ()
 					printf("|       |    |      |\n");
 					printf("  %c %c %c       %c %c %c \n",196,196,196,196,196,196);
                     printf("la carte du joueur 2 est plus grande ");
+		    printf("The card of the player 2 is bigger as the card of player 2 ");
 					getch();
 					system("cls");
 					var_temp = deck2[0];
@@ -186,6 +195,7 @@ void main ()
 					deck1[var_position] = 99;
 				}
 			//cas ou deck1 est plus grand
+			//if the deck1 is bigger ass deck2 
 			else if (Cartes[deck1[k]][1] > Cartes[deck2[k]][1])
 				{
                     printf("  %c %c %c       %c %c %c \n",196,196,196,196,196,196);
@@ -196,6 +206,7 @@ void main ()
 					printf("|       |    |      |\n");
 					printf("  %c %c %c       %c %c %c \n",196,196,196,196,196,196);
                     printf("la carte du joueur 1 est plus grande ");
+		    printf("the card of the player 1 is bigger as the card of player 2 "); 
 					getch();
 					system("cls");
 					var_temp = deck1[0];
@@ -218,6 +229,7 @@ void main ()
 					deck2[var_position] = 99;
 				}
             //cas d'egalite
+	    //case of equality 
 			else if (Cartes[deck1[k]][1] == Cartes[deck2[k]][1])
 				{
 					printf("  %c %c %c       %c %c %c \n",196,196,196,196,196,196);
@@ -228,30 +240,38 @@ void main ()
 					printf("|       |    |      |\n");
 					printf("  %c %c %c       %c %c %c \n",196,196,196,196,196,196);
                     printf("egalite des cartes,veuillez appuyer pour poser vos cartes dessus\n\n");
+		    printf("case of equality, can you press enter for put a card above\n\n"); 
 					getch();
 					system("cls");
 					egalite = 1;
 					while (egalite == 1 && Cartes[deck1[k]][1] == Cartes[deck2[k]][1])
 						{
 							//cas ou aucun jouer n'a de cartes
+							//case of all players didn't have any cards 
 							if (deck2[k+2] == 99 && deck1[k+2] == 99)
 								{
 									printf("Aucun des joueurs n'a encore de cartes dans son Deck\n\n");
+									printf("All players didn't have any cards in their decks\n\n");
 									egalite = 4;									
 								}
 							//cas ou le jouer 1 n'a plus de carte
+							//case of the player 1 didn't have any cards
 							else if (deck1[k+2] == 99 && deck2[k+2] != 99)
 								{
 									printf("le joueur 1 n'a plus de cartes dans son deck\n\n");	
+									printf("the player 1 didn't have any cards in his deck\n\n");
 									egalite = 2;
 								}
 							//cas ou le joueur 2 n'a plus de cartes
+							//case of the player 2 didn't have any cards 
 							else if (deck2[k+2] == 99 && deck1[k+2] != 99)
 								{
 									printf("le joueur 2 n'a plus de cartes dans son deck\n\n");
+									printf("the player 2 didn't have any cards in his deck\n\n"); 
 									egalite = 3;
 								}
 							//cas ou deck2 est plus grand
+							//case of the player 2 is bigger as the player 1 
 							else if (Cartes[deck1[k+2]][1] < Cartes[deck2[k+2]][1])
 								{
 									printf("  %c %c %c       %c %c %c \n",196,196,196,196,196,196);
@@ -262,6 +282,7 @@ void main ()
 									printf("|       |    |      |\n");
 									printf("  %c %c %c       %c %c %c \n",196,196,196,196,196,196);
 									printf("la carte du joueur 2 et plus grande que celle du joueur 1");
+									printf("the card of the player 2 is bigger as the card of player 2");
 									getch();
 									system("cls");
 									egalite = 5;
@@ -290,6 +311,7 @@ void main ()
 							
 								}
 							//cas ou deck1 est plus grand
+							//case of deck1 is bigger as deck 2 
 							else if (Cartes[deck1[k+2]][1] > Cartes[deck2[k+2]][1])
 								{
 								printf("  %c %c %c       %c %c %c \n",196,196,196,196,196,196);
@@ -300,6 +322,7 @@ void main ()
 								printf("|       |    |      |\n");
 								printf("  %c %c %c       %c %c %c \n",196,196,196,196,196,196);
 								printf("la carte du joueur 1 et plus grande que celle du joueur 2");
+								printf("the card of player 1 is bigger as the card of player 2");
 								getch();
 								system("cls");
 									egalite = 6;
@@ -328,6 +351,7 @@ void main ()
 
 								}
 							//cas ou ils sont toujours egaux
+							//case of the card is re equality 
 							else if (Cartes[deck1[k+2]][1] == Cartes[deck2[k+2]][1])
 								{
 									printf("  %c %c %c       %c %c %c \n",196,196,196,196,196,196);
@@ -338,6 +362,7 @@ void main ()
 									printf("|       |    |      |\n");
 									printf("  %c %c %c       %c %c %c \n",196,196,196,196,196,196);
 									printf("Il y a toujours egalite entre les deux cartes, remise de deux cartes\n\n");
+									printf("new equality press enter please"); 
 									getch();
 									system("cls");
 									egalite = 1;
@@ -346,32 +371,41 @@ void main ()
 						}
 					
 						printf(" Fin de la gestion du cas d egalite\n\n");
+						printf(" end of the gestion of the case of equality"); 
 						getch();
 
 				}
 				printf("\n\nveuillez appuyer sur une touche pour jouer une  carte\n\n");
+				printf("\n\nplease can you press enter for playing a card\n\n"); 
 			    getch();
 		}
 		while(deck1[0] != 99 && deck2[0] != 99);
 
 		//fin de la partie
+		//end of the game
 
-        printf("\n\nFin de la partie\n\n");	
+        printf("\n\nFin de la partie\n\n");
+	printf("\n\nEnd of the party\n\n"); 
 		if (egalite == 4)	
 			{ 
 				printf("Aucun joueur ne gagne car plus de carte dans leur deck");	
+				printf("No winner because all player haven't any cards in their decks");
 			}
 		else if (deck1[0] == 99 || egalite == 2)	
 			{ 
 				printf("Joueur 2 a gagne\n");	
+				printf("player 2 win\n);
 			}
 		else if (deck2[0] == 99 || egalite == 3)	
 			{
-				printf("Joueur 1 a gagne\n");	
+				printf("Joueur 1 a gagne\n");
+				printf("player 1 win\n");
 			}
 
 			getch();
 			printf("merci d'avoir jouer.Veuillez appuyer pour quitter le programme. ");
+			printf ("thanks for playing. Press enter for exit the game.");
 
 
 		} // end of program
+		  //fin du programme 
