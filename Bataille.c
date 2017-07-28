@@ -142,7 +142,7 @@ void main ()
 		}
 
 		printf("demarrage du jeu de bataille.\n\n");
-		ptintf("Start of the Battle game. \n\n");
+		printf("Start of the Battle game. \n\n");
 		printf("\n\nveuillez appuyer sur une touche pour jouer une  carte\n\n");
 		printf("\n\nPlease press enter to play one card\n\n");
 		getch();
